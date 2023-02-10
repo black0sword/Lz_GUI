@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://balala.io/user/tutorial?os=Android&client=Clash -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Clash 使用教程 — 树洞</title>
+<link href="./Clash 使用教程 — 树洞_files/metron-icon.css" rel="stylesheet" type="text/css">
+<link href="./Clash 使用教程 — 树洞_files/lightbox.min.css" rel="stylesheet">
+
+<meta name="renderer" content="webkit">
+<meta name="description" content="Updates and statistics">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<link href="./Clash 使用教程 — 树洞_files/fonts.css" rel="stylesheet">
+<link href="./Clash 使用教程 — 树洞_files/plugins.dark.css" rel="stylesheet" type="text/css">
+<link href="./Clash 使用教程 — 树洞_files/giatun.dark.css" rel="stylesheet" type="text/css">
+<link href="./Clash 使用教程 — 树洞_files/style.dark.css" rel="stylesheet" type="text/css">
+<link href="https://balala.io/favicon.ico" rel="shortcut icon">
+<style type="text/css">.apexcharts-canvas {
+  position: relative;
+  user-select: none;
+  /* cannot give overflow: hidden as it will crop tooltips which overflow outside chart area */
+}
+
+
+/* scrollbar is not visible by default for legend, hence forcing the visibility */
+.apexcharts-canvas ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+
+.apexcharts-canvas ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.apexcharts-canvas.apexcharts-theme-dark {
+  background: #424242;
+}
+
+.apexcharts-inner {
+  position: relative;
+}
+
+.apexcharts-text tspan {
+  font-family: inherit;
+}
+
+.legend-mouseover-inactive {
+  transition: 0.15s ease all;
+  opacity: 0.20;
+}
+
+.apexcharts-series-collapsed {
+  opacity: 0;
+}
+
+.apexcharts-tooltip {
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px -4px #999;
+  cursor: default;
+  font-size: 14px;
+  left: 62px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 12;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light {
+  border: 1px solid #e3e3e3;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark {
+  color: #fff;
+  background: rgba(30, 30, 30, 0.8);
+}
+
+.apexcharts-tooltip * {
+  font-family: inherit;
+}
+
+
+.apexcharts-tooltip-title {
+  padding: 6px;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  background: #ECEFF1;
+  border-bottom: 1px solid #ddd;
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid #333;
+}
+
+.apexcharts-tooltip-text-value,
+.apexcharts-tooltip-text-z-value {
+  display: inline-block;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.apexcharts-tooltip-text-z-label:empty,
+.apexcharts-tooltip-text-z-value:empty {
+  display: none;
+}
+
+.apexcharts-tooltip-text-value,
+.apexcharts-tooltip-text-z-value {
+  font-weight: 600;
+}
+
+.apexcharts-tooltip-marker {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 0px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.apexcharts-tooltip-series-group {
+  padding: 0 10px;
+  display: none;
+  text-align: left;
+  justify-content: left;
+  align-items: center;
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active .apexcharts-tooltip-marker {
+  opacity: 1;
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active,
+.apexcharts-tooltip-series-group:last-child {
+  padding-bottom: 4px;
+}
+
+.apexcharts-tooltip-series-group-hidden {
+  opacity: 0;
+  height: 0;
+  line-height: 0;
+  padding: 0 !important;
+}
+
+.apexcharts-tooltip-y-group {
+  padding: 6px 0 5px;
+}
+
+.apexcharts-tooltip-candlestick {
+  padding: 4px 8px;
+}
+
+.apexcharts-tooltip-candlestick>div {
+  margin: 4px 0;
+}
+
+.apexcharts-tooltip-candlestick span.value {
+  font-weight: bold;
+}
+
+.apexcharts-tooltip-rangebar {
+  padding: 5px 8px;
+}
+
+.apexcharts-tooltip-rangebar .category {
+  font-weight: 600;
+  color: #777;
+}
+
+.apexcharts-tooltip-rangebar .series-name {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.apexcharts-xaxistooltip {
+  opacity: 0;
+  padding: 9px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  background: #ECEFF1;
+  border: 1px solid #90A4AE;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-xaxistooltip:after,
+.apexcharts-xaxistooltip:before {
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.apexcharts-xaxistooltip:after {
+  border-color: rgba(236, 239, 241, 0);
+  border-width: 6px;
+  margin-left: -6px;
+}
+
+.apexcharts-xaxistooltip:before {
+  border-color: rgba(144, 164, 174, 0);
+  border-width: 7px;
+  margin-left: -7px;
+}
+
+.apexcharts-xaxistooltip-bottom:after,
+.apexcharts-xaxistooltip-bottom:before {
+  bottom: 100%;
+}
+
+.apexcharts-xaxistooltip-top:after,
+.apexcharts-xaxistooltip-top:before {
+  top: 100%;
+}
+
+.apexcharts-xaxistooltip-bottom:after {
+  border-bottom-color: #ECEFF1;
+}
+
+.apexcharts-xaxistooltip-bottom:before {
+  border-bottom-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:after {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:before {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top:after {
+  border-top-color: #ECEFF1
+}
+
+.apexcharts-xaxistooltip-top:before {
+  border-top-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:after {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:before {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-yaxistooltip {
+  opacity: 0;
+  padding: 4px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  background: #ECEFF1;
+  border: 1px solid #90A4AE;
+}
+
+.apexcharts-yaxistooltip.apexcharts-theme-dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-yaxistooltip:after,
+.apexcharts-yaxistooltip:before {
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.apexcharts-yaxistooltip:after {
+  border-color: rgba(236, 239, 241, 0);
+  border-width: 6px;
+  margin-top: -6px;
+}
+
+.apexcharts-yaxistooltip:before {
+  border-color: rgba(144, 164, 174, 0);
+  border-width: 7px;
+  margin-top: -7px;
+}
+
+.apexcharts-yaxistooltip-left:after,
+.apexcharts-yaxistooltip-left:before {
+  left: 100%;
+}
+
+.apexcharts-yaxistooltip-right:after,
+.apexcharts-yaxistooltip-right:before {
+  right: 100%;
+}
+
+.apexcharts-yaxistooltip-left:after {
+  border-left-color: #ECEFF1;
+}
+
+.apexcharts-yaxistooltip-left:before {
+  border-left-color: #90A4AE;
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:after {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:before {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right:after {
+  border-right-color: #ECEFF1;
+}
+
+.apexcharts-yaxistooltip-right:before {
+  border-right-color: #90A4AE;
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:after {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:before {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip.apexcharts-active {
+  opacity: 1;
+}
+
+.apexcharts-yaxistooltip-hidden {
+  display: none;
+}
+
+.apexcharts-xcrosshairs,
+.apexcharts-ycrosshairs {
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xcrosshairs.apexcharts-active,
+.apexcharts-ycrosshairs.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-ycrosshairs-hidden {
+  opacity: 0;
+}
+
+.apexcharts-selection-rect {
+  cursor: move;
+}
+
+.svg_select_boundingRect, .svg_select_points_rot {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.apexcharts-selection-rect + g .svg_select_boundingRect,
+.apexcharts-selection-rect + g .svg_select_points_rot {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.apexcharts-selection-rect + g .svg_select_points_l,
+.apexcharts-selection-rect + g .svg_select_points_r {
+  cursor: ew-resize;
+  opacity: 1;
+  visibility: visible;
+}
+
+.svg_select_points {
+  fill: #efefef;
+  stroke: #333;
+  rx: 2;
+}
+
+.apexcharts-canvas.apexcharts-zoomable .hovering-zoom {
+  cursor: crosshair
+}
+
+.apexcharts-canvas.apexcharts-zoomable .hovering-pan {
+  cursor: move
+}
+
+.apexcharts-zoom-icon,
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon,
+.apexcharts-reset-icon,
+.apexcharts-pan-icon,
+.apexcharts-selection-icon,
+.apexcharts-menu-icon,
+.apexcharts-toolbar-custom-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 24px;
+  color: #6E8192;
+  text-align: center;
+}
+
+.apexcharts-zoom-icon svg,
+.apexcharts-zoomin-icon svg,
+.apexcharts-zoomout-icon svg,
+.apexcharts-reset-icon svg,
+.apexcharts-menu-icon svg {
+  fill: #6E8192;
+}
+
+.apexcharts-selection-icon svg {
+  fill: #444;
+  transform: scale(0.76)
+}
+
+.apexcharts-theme-dark .apexcharts-zoom-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomin-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomout-icon svg,
+.apexcharts-theme-dark .apexcharts-reset-icon svg,
+.apexcharts-theme-dark .apexcharts-pan-icon svg,
+.apexcharts-theme-dark .apexcharts-selection-icon svg,
+.apexcharts-theme-dark .apexcharts-menu-icon svg,
+.apexcharts-theme-dark .apexcharts-toolbar-custom-icon svg {
+  fill: #f3f4f5;
+}
+
+.apexcharts-canvas .apexcharts-zoom-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-selection-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-reset-zoom-icon.apexcharts-selected svg {
+  fill: #008FFB;
+}
+
+.apexcharts-theme-light .apexcharts-selection-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoom-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoomin-icon:hover svg,
+.apexcharts-theme-light .apexcharts-zoomout-icon:hover svg,
+.apexcharts-theme-light .apexcharts-reset-icon:hover svg,
+.apexcharts-theme-light .apexcharts-menu-icon:hover svg {
+  fill: #333;
+}
+
+.apexcharts-selection-icon,
+.apexcharts-menu-icon {
+  position: relative;
+}
+
+.apexcharts-reset-icon {
+  margin-left: 5px;
+}
+
+.apexcharts-zoom-icon,
+.apexcharts-reset-icon,
+.apexcharts-menu-icon {
+  transform: scale(0.85);
+}
+
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon {
+  transform: scale(0.7)
+}
+
+.apexcharts-zoomout-icon {
+  margin-right: 3px;
+}
+
+.apexcharts-pan-icon {
+  transform: scale(0.62);
+  position: relative;
+  left: 1px;
+  top: 0px;
+}
+
+.apexcharts-pan-icon svg {
+  fill: #fff;
+  stroke: #6E8192;
+  stroke-width: 2;
+}
+
+.apexcharts-pan-icon.apexcharts-selected svg {
+  stroke: #008FFB;
+}
+
+.apexcharts-pan-icon:not(.apexcharts-selected):hover svg {
+  stroke: #333;
+}
+
+.apexcharts-toolbar {
+  position: absolute;
+  z-index: 11;
+  max-width: 176px;
+  text-align: right;
+  border-radius: 3px;
+  padding: 0px 6px 2px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apexcharts-menu {
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3px;
+  right: 10px;
+  opacity: 0;
+  min-width: 110px;
+  transition: 0.15s ease all;
+  pointer-events: none;
+}
+
+.apexcharts-menu.apexcharts-menu-open {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-menu-item {
+  padding: 6px 7px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.apexcharts-theme-light .apexcharts-menu-item:hover {
+  background: #eee;
+}
+
+.apexcharts-theme-dark .apexcharts-menu {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .apexcharts-canvas:hover .apexcharts-toolbar {
+    opacity: 1;
+  }
+}
+
+.apexcharts-datalabel.apexcharts-element-hidden {
+  opacity: 0;
+}
+
+.apexcharts-pie-label,
+.apexcharts-datalabels,
+.apexcharts-datalabel,
+.apexcharts-datalabel-label,
+.apexcharts-datalabel-value {
+  cursor: default;
+  pointer-events: none;
+}
+
+.apexcharts-pie-label-delay {
+  opacity: 0;
+  animation-name: opaque;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.apexcharts-canvas .apexcharts-element-hidden {
+  opacity: 0;
+}
+
+.apexcharts-hide .apexcharts-series-points {
+  opacity: 0;
+}
+
+.apexcharts-gridline,
+.apexcharts-annotation-rect,
+.apexcharts-tooltip .apexcharts-marker,
+.apexcharts-area-series .apexcharts-area,
+.apexcharts-line,
+.apexcharts-zoom-rect,
+.apexcharts-toolbar svg,
+.apexcharts-area-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-line-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-radar-series path,
+.apexcharts-radar-series polygon {
+  pointer-events: none;
+}
+
+
+/* markers */
+
+.apexcharts-marker {
+  transition: 0.15s ease all;
+}
+
+@keyframes opaque {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* Resize generated styles */
+
+@keyframes resizeanim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.resize-triggers {
+  animation: 1ms resizeanim;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.resize-triggers,
+.resize-triggers>div,
+.contract-trigger:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.resize-triggers>div {
+  background: #eee;
+  overflow: auto;
+}
+
+.contract-trigger:before {
+  width: 200%;
+  height: 200%;
+}</style><style>.crx_bdwk_down_wrap {
+    top: 70%;
+    left: 0;
+    position: fixed;
+    z-index: 99999999;
+    color: #fff;
+    user-select: none;
+}
+
+    .crx_bdwk_down_wrap .crx_bdwk_down_loading {
+        background-color: #666;
+        cursor: wait;
+        width: 126px;
+        text-align: center;
+        padding: 16px 0;
+    }
+
+    .crx_bdwk_down_wrap .crx_bdwk_down_loading p {
+            font-size: 14px;
+        }
+
+    .crx_bdwk_down_wrap .crx_bdwk_down_loading small {
+            font-size: 10px;
+        }
+
+    .crx_bdwk_down_wrap .crx_bdwk_down_btn {
+        width: 126px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 14px;
+        background-color: #dd5a57;
+        position: relative;
+    }
+
+    .crx_bdwk_down_wrap .crx_bdwk_down_types {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        background-color: #666;
+        font-size: 12px;
+    }
+
+    .crx_bdwk_down_wrap .crx_bdwk_down_types div {
+            position: relative;
+        }
+
+    .crx_bdwk_down_wrap .crx_bdwk_down_types div:after {
+                content: ' ';
+                height: 12px;
+                width: 1px;
+                background-color: #eee;
+                position: absolute;
+                top: 10px;
+                right: 0;
+                transform: scaleX(0.5);
+            }
+
+    .crx_bdwk_down_wrap .crx_bdwk_down_types div:last-child:after {
+                    display: none;
+                }
+
+    .crx_bdwk_down_wrap .crx_bdwk_down_types_check {
+            flex: 1;
+            color: #dd5a57;
+            padding: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+    .crx_bdwk_down_wrap .crx_bdwk_down_types_uncheck {
+            flex: 1;
+            padding: 8px;
+            cursor: pointer;
+            color: #fff;
+            font-weight: lighter;
+        }
+</style></head>
+<body id="kt_body" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled" data-header-scroll="on">
+<div id="kt_header_mobile" class="header-mobile">
+
+<h2 class="logo-default title-3d">树洞</h2>
+
+<div class="d-flex align-items-center">
+<button class="btn p-0 burger-icon burger-icon-left ml-4" id="kt_header_mobile_toggle">
+<span></span>
+</button>
+<button class="btn btn-icon btn-hover-transparent-white p-0 ml-3" id="kt_header_mobile_topbar_toggle">
+<span class="svg-icon svg-icon-xl">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<polygon points="0 0 24 0 24 24 0 24"></polygon>
+<path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+<path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
+</g>
+</svg>
+</span>
+</button>
+</div>
+</div>
+<div class="d-flex flex-column flex-root">
+<div class="d-flex flex-row flex-column-fluid page">
+<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+<div id="kt_header" class="header header-fixed">
+<div class="container d-flex align-items-stretch justify-content-between">
+<div class="d-flex align-items-stretch mr-3">
+<div class="header-logo">
+<a href="https://balala.io/user">
+<h2 class="logo-default title-3d">树洞</h2>
+<h2 class="logo-sticky">树洞</h2>
+</a>
+</div>
+<div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
+<div id="kt_header_menu" class="header-menu header-menu-left header-menu-mobile header-menu-layout-default">
+<ul class="menu-nav">
+<li class="menu-item menu-item-submenu menu-item-rel">
+<a href="https://balala.io/user" class="menu-link">
+<span class="menu-text"><strong>主页</strong></span>
+</a>
+</li>
+<li class="menu-item menu-item-submenu menu-item-rel">
+<a href="https://balala.io/user/code" class="menu-link">
+<span class="menu-text"><strong>钱包</strong></span>
+</a>
+</li>
+<li class="menu-item menu-item-submenu menu-item-rel">
+<a href="https://balala.io/user/shop" class="menu-link">
+<span class="menu-text"><strong>商店</strong></span>
+</a>
+</li>
+<li class="menu-item menu-item-submenu menu-item-rel">
+<a href="https://balala.io/user/node" class="menu-link">
+<span class="menu-text"><strong>节点</strong></span>
+</a>
+</li>
+<li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
+<a href="javascript:;" class="menu-link menu-toggle">
+<span class="menu-text"><strong>我的账号</strong></span>
+<span class="menu-desc"></span>
+<i class="menu-arrow"></i>
+</a>
+<div class="menu-submenu menu-submenu-classic menu-submenu-left">
+<ul class="menu-subnav">
+<li class="menu-item" aria-haspopup="true">
+<a href="https://balala.io/user/setting/logs" class="menu-link">
+<span class="svg-icon menu-icon">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<rect x="0" y="0" width="24" height="24"></rect>
+<path d="M17,2 L19,2 C20.6568542,2 22,3.34314575 22,5 L22,19 C22,20.6568542 20.6568542,22 19,22 L17,22 L17,2 Z" fill="#000000" opacity="0.3"></path>
+<path d="M4,2 L16,2 C17.6568542,2 19,3.34314575 19,5 L19,19 C19,20.6568542 17.6568542,22 16,22 L4,22 C3.44771525,22 3,21.5522847 3,21 L3,3 C3,2.44771525 3.44771525,2 4,2 Z M11.1176481,13.709585 C10.6725287,14.1547043 9.99251947,14.2650547 9.42948307,13.9835365 C8.86644666,13.7020183 8.18643739,13.8123686 7.74131803,14.2574879 L6.2303083,15.7684977 C6.17542087,15.8233851 6.13406645,15.8902979 6.10952004,15.9639372 C6.02219616,16.2259088 6.16377615,16.5090688 6.42574781,16.5963927 L7.77956724,17.0476658 C9.07965249,17.4810276 10.5130001,17.1426601 11.4820264,16.1736338 L15.4812434,12.1744168 C16.3714821,11.2841781 16.5921828,9.92415954 16.0291464,8.79808673 L15.3965752,7.53294436 C15.3725414,7.48487691 15.3409156,7.44099843 15.302915,7.40299777 C15.1076528,7.20773562 14.7910703,7.20773562 14.5958082,7.40299777 L13.0032662,8.99553978 C12.5581468,9.44065914 12.4477965,10.1206684 12.7293147,10.6837048 C13.0108329,11.2467412 12.9004826,11.9267505 12.4553632,12.3718698 L11.1176481,13.709585 Z" fill="#000000"></path>
+</g>
+</svg>
+</span>
+<span class="menu-text">账号记录</span>
+</a>
+</li>
+<li class="menu-item" aria-haspopup="true">
+<a href="https://balala.io/user/setting/traffic_log" class="menu-link">
+<span class="svg-icon menu-icon">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<rect x="0" y="0" width="24" height="24"></rect>
+<path d="M5,5 L5,15 C5,15.5948613 5.25970314,16.1290656 5.6719139,16.4954176 C5.71978107,16.5379595 5.76682388,16.5788906 5.81365532,16.6178662 C5.82524933,16.6294602 15,7.45470952 15,7.45470952 C15,6.9962515 15,6.17801499 15,5 L5,5 Z M5,3 L15,3 C16.1045695,3 17,3.8954305 17,5 L17,15 C17,17.209139 15.209139,19 13,19 L7,19 C4.790861,19 3,17.209139 3,15 L3,5 C3,3.8954305 3.8954305,3 5,3 Z" fill="#000000" fill-rule="nonzero" transform="translate(10.000000, 11.000000) rotate(-315.000000) translate(-10.000000, -11.000000) "></path>
+ <path d="M20,22 C21.6568542,22 23,20.6568542 23,19 C23,17.8954305 22,16.2287638 20,14 C18,16.2287638 17,17.8954305 17,19 C17,20.6568542 18.3431458,22 20,22 Z" fill="#000000" opacity="0.3"></path>
+</g>
+</svg>
+</span>
+<span class="menu-text">流量记录</span>
+</a>
+</li>
+<li class="menu-item" aria-haspopup="true">
+<a href="https://balala.io/user/setting/profile" class="menu-link">
+<span class="svg-icon menu-icon">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<rect x="0" y="0" width="24" height="24"></rect>
+<path d="M6,2 L18,2 C19.6568542,2 21,3.34314575 21,5 L21,19 C21,20.6568542 19.6568542,22 18,22 L6,22 C4.34314575,22 3,20.6568542 3,19 L3,5 C3,3.34314575 4.34314575,2 6,2 Z M12,11 C13.1045695,11 14,10.1045695 14,9 C14,7.8954305 13.1045695,7 12,7 C10.8954305,7 10,7.8954305 10,9 C10,10.1045695 10.8954305,11 12,11 Z M7.00036205,16.4995035 C6.98863236,16.6619875 7.26484009,17 7.4041679,17 C11.463736,17 14.5228466,17 16.5815,17 C16.9988413,17 17.0053266,16.6221713 16.9988413,16.5 C16.8360465,13.4332455 14.6506758,12 11.9907452,12 C9.36772908,12 7.21569918,13.5165724 7.00036205,16.4995035 Z" fill="#000000"></path>
+</g>
+</svg>
+</span>
+<span class="menu-text">资料编辑</span>
+</a>
+</li>
+<li class="menu-item" aria-haspopup="true">
+<a href="https://balala.io/user/setting/safe" class="menu-link">
+<span class="svg-icon menu-icon">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<rect x="0" y="0" width="24" height="24"></rect>
+<path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"></path>
+<path d="M14.5,11 C15.0522847,11 15.5,11.4477153 15.5,12 L15.5,15 C15.5,15.5522847 15.0522847,16 14.5,16 L9.5,16 C8.94771525,16 8.5,15.5522847 8.5,15 L8.5,12 C8.5,11.4477153 8.94771525,11 9.5,11 L9.5,10.5 C9.5,9.11928813 10.6192881,8 12,8 C13.3807119,8 14.5,9.11928813 14.5,10.5 L14.5,11 Z M12,9 C11.1715729,9 10.5,9.67157288 10.5,10.5 L10.5,11 L13.5,11 L13.5,10.5 C13.5,9.67157288 12.8284271,9 12,9 Z" fill="#000000"></path>
+</g>
+</svg>
+</span>
+<span class="menu-text">账号安全</span>
+</a>
+</li>
+<li class="menu-item" aria-haspopup="true">
+<a href="https://balala.io/user/setting/detect" class="menu-link">
+<span class="svg-icon menu-icon">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<rect x="0" y="0" width="24" height="24"></rect>
+<path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"></path>
+<path d="M10.5857864,12 L9.17157288,10.5857864 C8.78104858,10.1952621 8.78104858,9.56209717 9.17157288,9.17157288 C9.56209717,8.78104858 10.1952621,8.78104858 10.5857864,9.17157288 L12,10.5857864 L13.4142136,9.17157288 C13.8047379,8.78104858 14.4379028,8.78104858 14.8284271,9.17157288 C15.2189514,9.56209717 15.2189514,10.1952621 14.8284271,10.5857864 L13.4142136,12 L14.8284271,13.4142136 C15.2189514,13.8047379 15.2189514,14.4379028 14.8284271,14.8284271 C14.4379028,15.2189514 13.8047379,15.2189514 13.4142136,14.8284271 L12,13.4142136 L10.5857864,14.8284271 C10.1952621,15.2189514 9.56209717,15.2189514 9.17157288,14.8284271 C8.78104858,14.4379028 8.78104858,13.8047379 9.17157288,13.4142136 L10.5857864,12 Z" fill="#000000"></path>
+</g>
+</svg>
+</span>
+<span class="menu-text">审计封禁</span>
+</a>
+</li>
+<li class="menu-item" aria-haspopup="true">
+<a href="https://balala.io/user/setting/sublink" class="menu-link">
+<span class="svg-icon menu-icon">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<rect x="0" y="0" width="24" height="24"></rect>
+<path d="M14,16 L12,16 L12,12.5 C12,11.6715729 11.3284271,11 10.5,11 C9.67157288,11 9,11.6715729 9,12.5 L9,17.5 C9,19.4329966 10.5670034,21 12.5,21 C14.4329966,21 16,19.4329966 16,17.5 L16,7.5 C16,5.56700338 14.4329966,4 12.5,4 L12,4 C10.3431458,4 9,5.34314575 9,7 L7,7 C7,4.23857625 9.23857625,2 12,2 L12.5,2 C15.5375661,2 18,4.46243388 18,7.5 L18,17.5 C18,20.5375661 15.5375661,23 12.5,23 C9.46243388,23 7,20.5375661 7,17.5 L7,12.5 C7,10.5670034 8.56700338,9 10.5,9 C12.4329966,9 14,10.5670034 14,12.5 L14,16 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.500000, 12.500000) rotate(-315.000000) translate(-12.500000, -12.500000) "></path>
+</g>
+</svg>
+</span>
+<span class="menu-text">订阅设置</span>
+</a>
+</li>
+<li class="menu-item" aria-haspopup="true">
+<a href="https://balala.io/user/setting/relay" class="menu-link">
+<span class="svg-icon menu-icon">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<rect x="0" y="0" width="24" height="24"></rect>
+<path d="M6,7 C7.1045695,7 8,6.1045695 8,5 C8,3.8954305 7.1045695,3 6,3 C4.8954305,3 4,3.8954305 4,5 C4,6.1045695 4.8954305,7 6,7 Z M6,9 C3.790861,9 2,7.209139 2,5 C2,2.790861 3.790861,1 6,1 C8.209139,1 10,2.790861 10,5 C10,7.209139 8.209139,9 6,9 Z" fill="#000000" fill-rule="nonzero"></path>
+<path d="M7,11.4648712 L7,17 C7,18.1045695 7.8954305,19 9,19 L15,19 L15,21 L9,21 C6.790861,21 5,19.209139 5,17 L5,8 L5,7 L7,7 L7,8 C7,9.1045695 7.8954305,10 9,10 L15,10 L15,12 L9,12 C8.27142571,12 7.58834673,11.8052114 7,11.4648712 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+<path d="M18,22 C19.1045695,22 20,21.1045695 20,20 C20,18.8954305 19.1045695,18 18,18 C16.8954305,18 16,18.8954305 16,20 C16,21.1045695 16.8954305,22 18,22 Z M18,24 C15.790861,24 14,22.209139 14,20 C14,17.790861 15.790861,16 18,16 C20.209139,16 22,17.790861 22,20 C22,22.209139 20.209139,24 18,24 Z" fill="#000000" fill-rule="nonzero"></path>
+<path d="M18,13 C19.1045695,13 20,12.1045695 20,11 C20,9.8954305 19.1045695,9 18,9 C16.8954305,9 16,9.8954305 16,11 C16,12.1045695 16.8954305,13 18,13 Z M18,15 C15.790861,15 14,13.209139 14,11 C14,8.790861 15.790861,7 18,7 C20.209139,7 22,8.790861 22,11 C22,13.209139 20.209139,15 18,15 Z" fill="#000000" fill-rule="nonzero"></path>
+</g>
+</svg>
+</span>
+<span class="menu-text">节点中转</span>
+</a>
+</li>
+<li class="menu-item" aria-haspopup="true">
+<a href="https://balala.io/user/setting/invite" class="menu-link">
+<span class="svg-icon menu-icon">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<rect x="0" y="0" width="24" height="24"></rect>
+<path d="M6,2 L18,2 C18.5522847,2 19,2.44771525 19,3 L19,12 C19,12.5522847 18.5522847,13 18,13 L6,13 C5.44771525,13 5,12.5522847 5,12 L5,3 C5,2.44771525 5.44771525,2 6,2 Z M7.5,5 C7.22385763,5 7,5.22385763 7,5.5 C7,5.77614237 7.22385763,6 7.5,6 L13.5,6 C13.7761424,6 14,5.77614237 14,5.5 C14,5.22385763 13.7761424,5 13.5,5 L7.5,5 Z M7.5,7 C7.22385763,7 7,7.22385763 7,7.5 C7,7.77614237 7.22385763,8 7.5,8 L10.5,8 C10.7761424,8 11,7.77614237 11,7.5 C11,7.22385763 10.7761424,7 10.5,7 L7.5,7 Z" fill="#000000" opacity="0.3"></path>
+<path d="M3.79274528,6.57253826 L12,12.5 L20.2072547,6.57253826 C20.4311176,6.4108595 20.7436609,6.46126971 20.9053396,6.68513259 C20.9668779,6.77033951 21,6.87277228 21,6.97787787 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,6.97787787 C3,6.70173549 3.22385763,6.47787787 3.5,6.47787787 C3.60510559,6.47787787 3.70753836,6.51099993 3.79274528,6.57253826 Z" fill="#000000"></path>
+</g>
+</svg>
+</span>
+<span class="menu-text">邀请注册</span>
+</a>
+</li>
+<li class="menu-item" aria-haspopup="true">
+<a href="https://balala.io/user/setting/telegram" class="menu-link">
+ <span class="svg-icon menu-icon">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<rect x="0" y="0" width="24" height="24"></rect>
+<path d="M3,13.5 L19,12 L3,10.5 L3,3.7732928 C3,3.70255344 3.01501031,3.63261921 3.04403925,3.56811047 C3.15735832,3.3162903 3.45336217,3.20401298 3.70518234,3.31733205 L21.9867539,11.5440392 C22.098181,11.5941815 22.1873901,11.6833905 22.2375323,11.7948177 C22.3508514,12.0466378 22.2385741,12.3426417 21.9867539,12.4559608 L3.70518234,20.6826679 C3.64067359,20.7116969 3.57073936,20.7267072 3.5,20.7267072 C3.22385763,20.7267072 3,20.5028496 3,20.2267072 L3,13.5 Z" fill="#000000"></path>
+</g>
+</svg>
+</span>
+<span class="menu-text">Telegram 设置</span>
+</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-item menu-item-submenu menu-item-rel">
+<a href="https://balala.io/user/shared_account" class="menu-link">
+<span class="menu-text"><strong>苹果ID</strong></span>
+</a>
+</li>
+<li class="menu-item menu-item-submenu menu-item-rel">
+<a href="https://balala.io/user/setting/invite" class="menu-link">
+<span class="menu-text"><strong>邀请返利（可提现）</strong></span>
+</a>
+</li>
+<li class="menu-item menu-item-submenu menu-item-rel">
+<a href="https://t.me/Gwshudongio" target="_blank" class="menu-link">
+<span class="menu-text"><strong>加入群组</strong></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="topbar">
+<div class="dropdown mr-2">
+<div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
+<div class="btn btn-icon btn-hover-transparent-white d-flex align-items-center btn-lg px-md-2 w-md-auto">
+<span class="svg-icon svg-icon-white svg-icon-2x">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<polygon points="0 0 24 0 24 24 0 24"></polygon>
+<path d="M12.880982,3.00020666 C12.4130881,3.80913672 12.1452994,4.74829566 12.1452994,5.75 C12.1452994,8.77148908 14.5817362,11.2239178 17.5971169,11.2497933 C16.6461704,12.8938611 14.8686612,14 12.8327994,14 C9.7952333,14 7.33279942,11.5375661 7.33279942,8.5 C7.33279942,5.46243388 9.7952333,3 12.8327994,3 C12.8488765,3 12.8649374,3.00006898 12.880982,3.00020666 Z" fill="#000000"></path>
+<path d="M2.5,16 L21.5,16 C21.7761424,16 22,16.2238576 22,16.5 C22,16.7761424 21.7761424,17 21.5,17 L2.5,17 C2.22385763,17 2,16.7761424 2,16.5 C2,16.2238576 2.22385763,16 2.5,16 Z M2.5,18 L7.5,18 C7.77614237,18 8,18.2238576 8,18.5 C8,18.7761424 7.77614237,19 7.5,19 L2.5,19 C2.22385763,19 2,18.7761424 2,18.5 C2,18.2238576 2.22385763,18 2.5,18 Z M14.5,20 L21.5,20 C21.7761424,20 22,20.2238576 22,20.5 C22,20.7761424 21.7761424,21 21.5,21 L14.5,21 C14.2238576,21 14,20.7761424 14,20.5 C14,20.2238576 14.2238576,20 14.5,20 Z M9.5,18 L21.5,18 C21.7761424,18 22,18.2238576 22,18.5 C22,18.7761424 21.7761424,19 21.5,19 L9.5,19 C9.22385763,19 9,18.7761424 9,18.5 C9,18.2238576 9.22385763,18 9.5,18 Z M2.5,20 L12.5,20 C12.7761424,20 13,20.2238576 13,20.5 C13,20.7761424 12.7761424,21 12.5,21 L2.5,21 C2.22385763,21 2,20.7761424 2,20.5 C2,20.2238576 2.22385763,20 2.5,20 Z" fill="#000000" opacity="0.3"></path>
+</g>
+</svg>
+</span>
+<span class="text-white opacity-90 font-weight-bolder font-size-base d-none d-md-inline ml-2" style="white-space: nowrap;">外观</span>
+</div>
+</div>
+<div class="dropdown-menu p-0 m-0 dropdown-menu-anim-up dropdown-menu-sm dropdown-menu-right">
+<ul class="navi navi-hover py-4">
+<li class="navi-item">
+<a href="JavaScript:;" class="navi-link" onclick="mt.changeTheme(&#39;primary&#39;);">
+<span class="svg-icon svg-icon-white svg-icon-2x mr-3">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<polygon points="0 0 24 0 24 24 0 24"></polygon>
+<path d="M8,14 C8,11.790861 9.790861,10 12,10 C14.209139,10 16,11.790861 16,14 C16,14 8,14 8,14 Z" fill="#000000" fill-rule="nonzero"></path>
+<path d="M19.5,11 L21,11 C21.8284271,11 22.5,11.6715729 22.5,12.5 C22.5,13.3284271 21.8284271,14 21,14 L19.5,14 C18.6715729,14 18,13.3284271 18,12.5 C18,11.6715729 18.6715729,11 19.5,11 Z M16.0606602,6.87132034 L17.1213203,5.81066017 C17.7071068,5.22487373 18.6568542,5.22487373 19.2426407,5.81066017 C19.8284271,6.39644661 19.8284271,7.34619408 19.2426407,7.93198052 L18.1819805,8.99264069 C17.5961941,9.57842712 16.6464466,9.57842712 16.0606602,8.99264069 C15.4748737,8.40685425 15.4748737,7.45710678 16.0606602,6.87132034 Z M3,11 L4.5,11 C5.32842712,11 6,11.6715729 6,12.5 C6,13.3284271 5.32842712,14 4.5,14 L3,14 C2.17157288,14 1.5,13.3284271 1.5,12.5 C1.5,11.6715729 2.17157288,11 3,11 Z M12,2.5 C12.8284271,2.5 13.5,3.17157288 13.5,4 L13.5,5.5 C13.5,6.32842712 12.8284271,7 12,7 C11.1715729,7 10.5,6.32842712 10.5,5.5 L10.5,4 C10.5,3.17157288 11.1715729,2.5 12,2.5 Z M4.81066017,5.81066017 C5.39644661,5.22487373 6.34619408,5.22487373 6.93198052,5.81066017 L7.99264069,6.87132034 C8.57842712,7.45710678 8.57842712,8.40685425 7.99264069,8.99264069 C7.40685425,9.57842712 6.45710678,9.57842712 5.87132034,8.99264069 L4.81066017,7.93198052 C4.22487373,7.34619408 4.22487373,6.39644661 4.81066017,5.81066017 Z M2.5,16 L21.5,16 C21.7761424,16 22,16.2238576 22,16.5 C22,16.7761424 21.7761424,17 21.5,17 L2.5,17 C2.22385763,17 2,16.7761424 2,16.5 C2,16.2238576 2.22385763,16 2.5,16 Z M2.5,18 L7.5,18 C7.77614237,18 8,18.2238576 8,18.5 C8,18.7761424 7.77614237,19 7.5,19 L2.5,19 C2.22385763,19 2,18.7761424 2,18.5 C2,18.2238576 2.22385763,18 2.5,18 Z M14.5,20 L21.5,20 C21.7761424,20 22,20.2238576 22,20.5 C22,20.7761424 21.7761424,21 21.5,21 L14.5,21 C14.2238576,21 14,20.7761424 14,20.5 C14,20.2238576 14.2238576,20 14.5,20 Z M9.5,18 L21.5,18 C21.7761424,18 22,18.2238576 22,18.5 C22,18.7761424 21.7761424,19 21.5,19 L9.5,19 C9.22385763,19 9,18.7761424 9,18.5 C9,18.2238576 9.22385763,18 9.5,18 Z M2.5,20 L12.5,20 C12.7761424,20 13,20.2238576 13,20.5 C13,20.7761424 12.7761424,21 12.5,21 L2.5,21 C2.22385763,21 2,20.7761424 2,20.5 C2,20.2238576 2.22385763,20 2.5,20 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+</g>
+</svg>
+</span>
+<span class="navi-text">浅色主题</span>
+</a>
+</li>
+<li class="navi-item">
+<a href="JavaScript:;" class="navi-link" onclick="mt.changeTheme(&#39;dark&#39;);">
+<span class="svg-icon svg-icon-white svg-icon-2x mr-3">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<polygon points="0 0 24 0 24 24 0 24"></polygon>
+<path d="M12.880982,3.00020666 C12.4130881,3.80913672 12.1452994,4.74829566 12.1452994,5.75 C12.1452994,8.77148908 14.5817362,11.2239178 17.5971169,11.2497933 C16.6461704,12.8938611 14.8686612,14 12.8327994,14 C9.7952333,14 7.33279942,11.5375661 7.33279942,8.5 C7.33279942,5.46243388 9.7952333,3 12.8327994,3 C12.8488765,3 12.8649374,3.00006898 12.880982,3.00020666 Z" fill="#000000"></path>
+<path d="M2.5,16 L21.5,16 C21.7761424,16 22,16.2238576 22,16.5 C22,16.7761424 21.7761424,17 21.5,17 L2.5,17 C2.22385763,17 2,16.7761424 2,16.5 C2,16.2238576 2.22385763,16 2.5,16 Z M2.5,18 L7.5,18 C7.77614237,18 8,18.2238576 8,18.5 C8,18.7761424 7.77614237,19 7.5,19 L2.5,19 C2.22385763,19 2,18.7761424 2,18.5 C2,18.2238576 2.22385763,18 2.5,18 Z M14.5,20 L21.5,20 C21.7761424,20 22,20.2238576 22,20.5 C22,20.7761424 21.7761424,21 21.5,21 L14.5,21 C14.2238576,21 14,20.7761424 14,20.5 C14,20.2238576 14.2238576,20 14.5,20 Z M9.5,18 L21.5,18 C21.7761424,18 22,18.2238576 22,18.5 C22,18.7761424 21.7761424,19 21.5,19 L9.5,19 C9.22385763,19 9,18.7761424 9,18.5 C9,18.2238576 9.22385763,18 9.5,18 Z M2.5,20 L12.5,20 C12.7761424,20 13,20.2238576 13,20.5 C13,20.7761424 12.7761424,21 12.5,21 L2.5,21 C2.22385763,21 2,20.7761424 2,20.5 C2,20.2238576 2.22385763,20 2.5,20 Z" fill="#000000" opacity="0.3"></path>
+</g>
+</svg>
+</span>
+<span class="navi-text">深色主题</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="dropdown">
+<div class="topbar-item" data-toggle="dropdown" data-offset="0px,0px">
+<div class="btn btn-icon btn-hover-transparent-white d-flex align-items-center btn-lg px-md-2 w-md-auto">
+<span class="text-white opacity-70 font-weight-bold font-size-base d-none d-md-inline mr-1">你好,</span>
+<span class="text-white opacity-90 font-weight-bolder font-size-base d-none d-md-inline mr-4">fish</span>
+<span class="symbol symbol-35">
+<img src="./Clash 使用教程 — 树洞_files/logo.webp" alt="">
+</span>
+</div>
+</div>
+<div class="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-lg p-0 shadow-lg">
+<div class="d-flex align-items-center p-8 rounded-top">
+<div class="symbol symbol-md bg-light-primary mr-3 flex-shrink-0">
+<img src="./Clash 使用教程 — 树洞_files/logo.webp" alt="">
+</div>
+<div class="text-primary m-0 flex-grow-1 mr-3 font-size-h5">&nbsp;<strong>fish</strong></div>
+
+</div>
+<div class="navi navi-spacer-x-0 pt-5">
+<div class="navi-separator mt-3"></div>
+<div class="navi-footer px-8 py-5">
+<a href="https://balala.io/user/logout" class="btn btn-gray font-weight-bold">退出登录</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+<div class="subheader min-h-lg-175px pt-5 pb-7 subheader-transparent" id="kt_subheader">
+<div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+<div class="d-flex align-items-center flex-wrap mr-2">
+<div class="d-flex flex-column">
+<h2 class="text-white font-weight-bold my-2 mr-5">Clash for Android 使用教程</h2>
+</div>
+</div>
+<div class="d-flex align-items-center">
+</div>
+</div>
+</div>
+<div class="d-flex flex-column-fluid">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="card card-custom gutter-b rounded-lg shadow">
+<div class="card-header">
+<div class="card-title">
+ </div>
+</div>
+<div class="card-body">
+<div class="row p-5">
+<div class="col-sm-12 col-md-12 col-lg-7 pb-5">
+<p class="font-size-h1 pb-5"><strong>0. 简介</strong></p>
+<div class="example-preview">
+<p><code>Clash</code>是一款用 Go语言 开发的支持 Linux/MacOS/Windows/Android 等多平台的代理工具，支持 trojan/v2ray，支持规则分流（类似于 Surge 的配置）。</p>
+<p>由于客户端长期更新中可能出现界面或功能与教程不符，我们建议您把本教程仅作为参考，具体需要根据自己使用过程中熟悉了解。</p>
+</div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-5">
+<a class="image-popup-no-margins" href="./Clash 使用教程 — 树洞_files/a1.png" data-lightbox="images">
+<img class="rounded-lg" style="width:100%" src="./Clash 使用教程 — 树洞_files/a1.png"></a>
+</div>
+</div>
+<div class="separator separator-dashed separator-border-4"></div>
+<div class="row p-5">
+<div class="col-sm-12 col-md-12 col-lg-7 pb-5">
+<p class="font-size-h1 pb-5"><strong>0. 视频教程</strong></p>
+<video width="320" height="720" controls="" __idm_id__="1024001">
+<source src="https://oss.qwertyuiopzxcvbnm.club/client-download/video/clash.webm" type="video/webm">
+<source src="movie.webm" type="video/webm">
+<object data="./Clash 使用教程 — 树洞_files/movie.mp4" width="1280" height="720">
+<embed src="movie.swf" width="320" height="240">
+</object>
+</video>
+<p class="font-size-h1 pb-5"><strong>1. 下载客户端</strong></p>
+<a href="https://oss.qwertyuiopzxcvbnm.club/client-download/clash.apk" class="btn btn-pill btn-clash mb-4">&nbsp;&nbsp;<i class="metron-clash text-white"></i>下载 Clash 客户端</a>&nbsp;&nbsp;&nbsp;
+<a href="https://aaa.qwertyuiopzxcvbnm.club/oss/cfa-2.4.14-premium-universal-release.apk" class="btn btn-pill btn-clash mb-4">&nbsp;&nbsp;<i class="metron-clash text-white"></i>备用下载 Clash 客户端</a>&nbsp;&nbsp;&nbsp;
+<p class="mb-2">下载客户端并进行安装</p>
+<p class="mb-2">启动客户端并进行下面操作</p>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-5">
+<a class="image-popup-no-margins" href="./Clash 使用教程 — 树洞_files/a2.png" data-lightbox="images">
+<img class="rounded-lg" style="width:100%" src="./Clash 使用教程 — 树洞_files/a2.png"></a>
+</div>
+</div>
+<div class="separator separator-dashed separator-border-4"></div>
+<div class="row p-5">
+<div class="col-sm-12 col-md-12 col-lg-7 pb-5">
+<p class="font-size-h1 pb-5"><strong>2. 设置订阅地址</strong></p>
+<div class="btn-group mb-3 mr-3">
+<button type="button" class="btn btn-pill btn-clash dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;&nbsp;<i class="metron-clash text-white"></i>Clash 订阅配置&nbsp;&nbsp;</button>
+<div class="dropdown-menu">
+<button type="button" class="dropdown-item copy-text" data-clipboard-text="https://browser.networkwebmail.com/link/wWcD7BvxxaTG5GLr?clash=1">复制 Clash 订阅</button>
+<div class="dropdown-divider">
+</div>
+<button type="button" class="dropdown-item" href="##" onclick="importSublink(&#39;clash&#39;)">一键导入 Clash</button>
+</div>
+</div>
+<p class="mb-2">点击上方按钮一键导入节点配置到Clash</p>
+<p class="mb-2">文件名填入 <code>树洞</code></p>
+<p class="mb-2">然后点击右上角完成导入</p>
+<p class="mb-2">再次打开软件，进入 <code>配置文件</code> 选中刚刚导入的节点配置</p>
+<p class="mb-2">请注意：如果您没有购买我们的会员或者您的套餐已经过期，那么将无法导入成功</p>
+<div class="alert alert-custom alert-outline-primary fade show mb-5" role="alert">
+<div class="alert-icon">
+<i class="flaticon-warning"></i>
+</div>
+<div class="alert-text">
+<p class="mb-2">无法一键导入? 试试手动设置订阅</p>
+<p class="mb-2">先复制 Clash 订阅地址</p>
+<p class="mb-2">打开APP 进入 <code>配置</code> - 选择 <code>新配置</code> - <code>URL</code> </p>
+<p class="mb-2">粘贴订阅地址到 URL 一栏, 名称填写 树洞, 点击右上角保存</p>
+<p class="mb-2">回到 <code>配置文件</code> 选中刚刚导入的节点配置</p>
+<p class="mb-2">请注意：如果您没有购买我们的会员或者您的套餐已经过期，那么将无法导入成功</p>
+</div>
+ <div class="alert-close">
+<button type="button" class="close" data-dismiss="alert" aria-label="关">
+<span aria-hidden="true">
+<i class="ki ki-close"></i>
+</span>
+</button>
+</div>
+</div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-5">
+<a class="image-popup-no-margins" href="./Clash 使用教程 — 树洞_files/a3.png" data-lightbox="images">
+<img class="rounded-lg" style="width:100%" src="./Clash 使用教程 — 树洞_files/a3.png"></a>
+</div>
+</div>
+<div class="separator separator-dashed separator-border-4"></div>
+<div class="row p-5">
+<div class="col-sm-12 col-md-12 col-lg-7 pb-5">
+<p class="font-size-h1 pb-5"><strong>3. 开启代理并选择节点</strong></p>
+<p class="mb-2">点击 <code>已停止</code> 按钮将状态切换至<code>运行中</code></p>
+<p class="mb-2">点击 <code>"代理"</code> 按钮进入节点配置界面选择想要使用的节点</p>
+<div class="h6 pt-2"> 如果全部节点测试都显示超时检查套餐是否过期，<code>特别重要的是，
+请确保设别的时间与当前时区时间误差不得超过1分钟。请百度一下“北京时间”与设备时间进行对比。</code></div>
+<p class="mb-2">根据设置即可使用，打开google.com试试吧</p>
+<div class="h6 pt-2"> 关于延迟测速
+请注意， Clash 软件的任何延迟测速都不准确。因为延迟测速会对每个节点进行连接并测试http 延迟。
+这并不能代表节点实际带宽速率，同时反而会造成在线数异常，超过套餐可用最大在线数。</div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-5">
+<a class="image-popup-no-margins" href="./Clash 使用教程 — 树洞_files/a4.png" data-lightbox="images">
+<img class="rounded-lg" style="width:100%" src="./Clash 使用教程 — 树洞_files/a4.png"></a>
+</div>
+</div>
+
+<div class="row p-5">
+
+<div class="col-sm-12 col-md-12 col-lg-7 pb-5">
+
+<p class="font-size-h1 pb-5"><strong>注意事项与故障排查</strong></p>
+
+
+<div class="h6 pt-2"> 关于延迟测速：
+请注意， Clash 软件的任何延迟测速都不准确。因为延迟测速会对每个节点进行连接并测试http 延迟。
+这并不能代表节点实际带宽速率。测试结果每个节点有数值的就是正常的节点。延迟数字较低较好但不是绝对越低越好。</div>
+<br>
+<div class="h6 pt-2"> 如果全部节点测试都显示超时检查套餐是否过期，<code>特别重要的是，
+请确保设备的时间与当前时区时间误差不得超过1分钟。请百度一下“北京时间”与设备时间进行对比。</code></div>
+<br>
+<div class="h6 pt-2"> 福建地区的用户因为反诈系统的关系，无法正常导入节点的话请使用安卓教程里的另一个软件ANXRAY，那里有针对性的解决办法。</div>
+<br>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+<div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+<div class="text-dark order-2 order-md-1">
+<span class="text-muted font-weight-bold mr-2">2021©</span>
+<a href="https://balala.io/" target="_blank" class="text-dark-75 text-hover-primary">树洞</a>
+</div>
+
+</div>
+</div>
+<script>
+                        var status = 1;
+                        setTimeout(()=>{
+                            removeCopy();
+                        }, 1000);
+                        function removeCopy(){
+                            if($('#theme_copyright').html() && this.status == 1){
+                                $('#theme_copyright').remove();
+                                this.status = 0;
+                            } else {
+								setTimeout(()=>{
+									removeCopy();
+								}, 200);
+                            }
+                        };
+                    </script>
+<script language="javascript" type="text/javascript" src="./Clash 使用教程 — 树洞_files/jquery.min.js.下载"></script>
+<script type="text/javascript">
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+
+  var a = new Array("❤","❤❤","❤❤❤");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script> </div>
+
+
+<script> var ThemeStyle = JSON.parse('{"theme":"dark","global":{"gray":{"100":"#F3F6F9","200":"#ECF0F3","300":"#E5EAEE","400":"#D6D6E0","500":"#B5B5C3","600":"#80808F","700":"#464E5F","800":"#1B283F","900":"#212121"}},"index":{"flowTiaoChart":{"strip":"#6993FF","light":"#3a3b3c","text":"#FFFFFF"}}}'); </script>
+<script> var ASSETS_URL = "/theme/metron"; </script>
+<script src="./Clash 使用教程 — 树洞_files/plugins.bundle.js.下载"></script>
+<script src="./Clash 使用教程 — 树洞_files/metron-plugin.js.下载"></script>
+<script src="./Clash 使用教程 — 树洞_files/scripts.js.下载"></script>
+<script src="./Clash 使用教程 — 树洞_files/metron.js.下载"></script>
+<script>
+            function importSublink(client) {
+            if (client == 'ssr') {
+                index.oneclickImport('ssr', 'https://browser.networkwebmail.com/link/wWcD7BvxxaTG5GLr?sub=1');
+            };
+            if (client == 'clash') {
+                index.oneclickImport('clash','https://browser.networkwebmail.com/link/wWcD7BvxxaTG5GLr?clash=1')
+            };
+            if (client == 'clashr') {
+                index.oneclickImport('clashr','https://browser.networkwebmail.com/link/wWcD7BvxxaTG5GLr?clash=2')
+            };
+            if (client == 'shadowrocket') {
+                index.oneclickImport('shadowrocket','https://browser.networkwebmail.com/link/wWcD7BvxxaTG5GLr?list=shadowrocket')
+            };
+            if (client == 'quantumult') {
+                index.oneclickImport('quantumult','https://browser.networkwebmail.com/link/wWcD7BvxxaTG5GLr?sub=1')
+            };
+            if (client == 'quantumult_v2') {
+                index.oneclickImport('quantumult_v2','https://browser.networkwebmail.com/link/wWcD7BvxxaTG5GLr?list=quantumult')
+            };
+            }
+            function qrcodeSublink(client) {
+                if (client == 'shadowrocket') {
+                    index.qrcodeImport('shadowrocket', 'https://browser.networkwebmail.com/link/wWcD7BvxxaTG5GLr?list=shadowrocket');
+                }
+            }
+        </script> <script src="./Clash 使用教程 — 树洞_files/lightbox.min.js.下载" type="text/javascript"></script>
+
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" tabindex="-1" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""><div class="lb-nav"><a class="lb-prev" aria-label="Previous image" href="https://balala.io/user/tutorial?os=Android&amp;client=Clash"></a><a class="lb-next" aria-label="Next image" href="https://balala.io/user/tutorial?os=Android&amp;client=Clash"></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div></body></html>

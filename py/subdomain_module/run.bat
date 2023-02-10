@@ -1,0 +1,1 @@
+python alldomainV2.py

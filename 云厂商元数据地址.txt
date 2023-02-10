@@ -1,0 +1,5 @@
+阿里云的元数据地址为  http://100.100.100.200/latest/meta-data
+腾讯云的元数据地址为  http://metadata.tencentyun.com/latest/meta-data/
+
+
+curl http://metadata.tencentyun.com/latest/meta-data/
